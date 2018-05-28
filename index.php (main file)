@@ -1,0 +1,626 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <?php /*variables */     
+        $sitename="City of Portland";     
+        $slogan="User Log Data";
+        $sitepath="http://people.oregonstate.edu/~wrightau";    
+        $author="BA 372 Class of Oregon State: Spring Term"; 
+    ?>
+    
+  <!--SQL Query-->
+    <?php
+				$servername = "oniddb.cws.oregonstate.edu";
+				$username = "wrightau-db";
+				$password = "pgFbX0IYQ0mZYiOx";
+				$dbname = "wrightau-db";
+				
+				// Create new connection
+				$conn = new mysqli($servername, $username, $password, $dbname);
+				if ($conn->connect_error) {
+				    die("Connection failed: " . $conn->connect_error);
+				} 
+				
+				$sql = "
+				SELECT id, firstname, lastname FROM MyGuests
+				SELECT id, firstname, lastname FROM MyGuests
+				SELECT id, firstname, lastname FROM MyGuests
+				SELECT id, firstname, lastname FROM MyGuests
+				SELECT id, firstname, lastname FROM MyGuests
+				SELECT id, firstname, lastname FROM MyGuests
+				SELECT id, firstname, lastname FROM MyGuests
+				SELECT id, firstname, lastname FROM MyGuests
+				SELECT id, firstname, lastname FROM MyGuests
+				SELECT id, firstname, lastname FROM MyGuests
+				SELECT id, firstname, lastname FROM MyGuests
+				";
+				$result = $conn->query($sql);
+				
+				if ($result->num_rows > 0) {
+				    // output data of each row
+				    while($row = $result->fetch_assoc()) {
+				        echo "id: " . $row["id"]. " - Name: " . $row["firstname"]. " " . $row["lastname"]. "<br>";
+				    }
+				} else {
+				    echo "0 results";
+				}
+				$conn->close();
+		?>
+    
+    <title> BA 372 User Log Data </title>
+    <!--meta-->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="<?php echo $slogan; ?>" />
+        <meta name="author" content="<?php echo $author; ?>" />
+        <meta name="keywords" content="BA372, BA, 372, City of Portland, User Log Data " />
+        <meta name="robots" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!--links-->
+        <link href="main.css" rel="stylesheet"  />
+        <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+        <!--<link href="slideshow.css" rel="stylesheet" />-->
+        <!--fonts-->
+        <!--FONTREPLACE--><link href="https://fonts.googleapis.com/css?family=Raleway|Vidaloka" rel="stylesheet">
+        <!--favicon-->
+    <!--scripts-->
+        <script src="modernizr-dev-min.js"></script>
+</head>
+<body>
+    <header>
+        <img class="images" src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/img/CoPSeal.png"/>
+        <h1 class="textHeadColor, fontColor"><?php echo $sitename; ?></h1>
+        
+		<!--Slideshow-->
+		<div id="slider" class="swipe">
+		    <figure>
+    		    <img class="imageRules" src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow1.jpg"/>
+    		    <img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow2.jpg"/>
+    		    <img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow3.jpg"/>
+    			<img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow4.jpg"/>
+    			<img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow5.jpg"/>
+    			<img class="imageRules" src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow1.jpg"/>
+    		    <img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow2.jpg"/>
+    		    <img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow3.jpg"/>
+    			<img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow4.jpg"/>
+    			<img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow5.jpg"/>
+    			<img class="imageRules" src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow1.jpg"/>
+    		    <img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow2.jpg"/>
+    		    <img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow3.jpg"/>
+    			<img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow4.jpg"/>
+    			<img class="imageRules"src="http://people.oregonstate.edu/~wrightau/ba372UserLogData/photos/slideshow5.jpg"/>
+    		</figure>
+		</div>
+		
+        <h3 class="textSubHeadColor, fontColor"><?php echo $slogan; ?></h3>
+    </header>
+    
+    <!--UNNEEDED FOR PROTOTYPE - KEEP AS SYNTAX-POOL-->
+        <!--nav-->
+            <!--unordered list-->
+        <!--    ul-->
+        <!--      li-->
+        <!--/nav-->
+        <!-- article about me-->
+        <!--    headline 1 about -->
+        <!--    aside -->
+        <!--       <p>  paragraph about author-->
+        <!--       figure-->
+        <!--           image-->
+        <!--           figcaption-->
+        <!--       /figure-->
+        <!--       audio about author or music selection-->
+        <!--    /aside-->
+        <!--    headline 2 contact-->
+        <!--    address -->
+        <!--       name with anchor-->
+        <!--       address-->
+        <!--       city,state,zip-->
+        <!--       phone-->
+        <!--       contact anchor jumps to form below-->
+        <!--    /address-->
+        <!--/article-->
+        <!--article education-->
+        <!--    headline 2-->
+        <!--    dl list-->
+        <!--        <dl> -->
+                    <!--<dt>-->
+                    <!--  <dd>-->
+        <!--/article-->
+        <!--article work-->
+        <!--   headline 2-->
+        <!--   dl list-->
+        <!--/article-->
+        <!--article service-->
+        <!--   headline 2-->
+        <!--   dl list-->
+        <!--   iframe, video-->
+        <!--/article-->
+        <!--article fun-->
+        <!--   headline 2-->
+        <!--   figure gallery -->
+        <!--      img-->
+        <!--      figcaption-->
+        <!--   /figure-->
+        <!--/article-->
+        
+    <main>
+    <!--Options Menu-->
+    <form class="MenuWidth" id="Table Options" action="index.php" method="post">
+        <fieldset class="fieldset">
+            <legend class="options">Options</legend>
+            <label class="menuHeadlines" for="searchFunction">Search:</label>
+                <input class="SearchWidth" name="searchInput" id="searchInput" type="text" required placeholder="Employee Name or ID Number"  maxlength="26"  />
+            <h4> </h4>
+            
+            <h4 class="menuHeadlines sorting">Sorting:</h4>
+            
+            <label class="forms" for="activeStatus">
+            Active Status
+            <input  id="activeStatus" name="subject" type="radio" value="Active Status" />
+            </label>
+            <label class="forms" for="employeeID">
+            Employee ID
+            <input  id="employeeID" name="subject" type="radio" value="Employee ID" />
+            </label>
+            <label class="forms" for="employeeName">
+            Employee Name
+            <input  id="employeeName" name="subject" type="radio" value="Employee Name" />
+            </label>
+            <label class="forms" for="bureauID">
+            Bureau ID
+            <input  id="bureauID" name="subject" type="radio" value="Bureau ID" />
+            </label>
+            <label class="forms" for="meritStatus">
+            Merit Increase?
+            <input  id="meritStatus" name="subject" type="radio" value="Merit Increase" />
+            </label>
+            <label class="forms" for="managerName">
+            Manager Name
+            <input  id="managerName" name="subject" type="radio" value="Manager Name" />
+            </label>
+            <label class="forms" for="startDate">
+            Start Date
+            <input  id="startDate" name="subject" type="radio" value="Start Date" />
+            </label>
+            <label class="forms" for="reviewDate">
+            Review Date
+            <input  id="reviewDate" name="subject" type="radio" value="Review Date" />
+            </label>
+            <label class="forms" for="reviewStatus">
+            Review Status
+            <input  id="reviewStatus" name="subject" type="radio" value="Review Status" />
+            </label>
+            <label class="forms" for="unionStatus">
+            Union Status
+            <input  id="unionStatus" name="subject" type="radio" value="Union Status" />
+            </label>
+            
+            <h4> </h4>
+            <label for="filter_1">Filter(s):
+                <h4> </h4>
+                <select name="filter1" id="subject">
+                  <option value="">choose filter 1</option>
+                  <option value="activeStatus">Active Status</option>
+                  <option value="employeeID">Employee ID</option>
+                  <option value="employeeName">Employee Name</option>
+                  <option value="bureauID">Bureau ID</option>
+                  <option value="meritStatus">Merit Increase?</option>
+                  <option value="managerName">Manager Name</option>
+                  <option value="startDate">Start Date</option>
+                  <option value="reviewDate">Review Date</option>
+                  <option value="reviewStatus">Review Status</option>
+                  <option value="unionStatus">Union Status</option>
+                </select>
+                <select name="filter2" id="subject">
+                  <option value="">choose filter 2</option>
+                  <option value="activeStatus">Active Status</option>
+                  <option value="employeeID">Employee ID</option>
+                  <option value="employeeName">Employee Name</option>
+                  <option value="bureauID">Bureau ID</option>
+                  <option value="meritStatus">Merit Increase?</option>
+                  <option value="managerName">Manager Name</option>
+                  <option value="startDate">Start Date</option>
+                  <option value="reviewDate">Review Date</option>
+                  <option value="reviewStatus">Review Status</option>
+                  <option value="unionStatus">Union Status</option>
+                </select>
+                <select name="filter3" id="subject">
+                  <option value="">choose filter 3</option>
+                  <option value="activeStatus">Active Status</option>
+                  <option value="employeeID">Employee ID</option>
+                  <option value="employeeName">Employee Name</option>
+                  <option value="bureauID">Bureau ID</option>
+                  <option value="meritStatus">Merit Increase?</option>
+                  <option value="managerName">Manager Name</option>
+                  <option value="startDate">Start Date</option>
+                  <option value="reviewDate">Review Date</option>
+                  <option value="reviewStatus">Review Status</option>
+                  <option value="unionStatus">Union Status</option>
+                </select>
+            </label>
+        </fieldset>
+    </form>
+    
+    <article id="UserLogTable">
+        <table>
+				<caption class="UserLogTable">User Log Table</caption>
+				<thead>
+					<!--Table Configuration-->
+								<tr>
+										<th class="textCell, bold">Active Status</th>
+										<th class="numCell, bold">Emp ID</th>
+										<th class="textCell, bold">Employee Name</th>
+										<th class="numCell, bold">Bureau ID</th>
+										<th class="textCell, bold">Merit Increase?</th>
+										<th class="textCell, bold">Manager Name</th>
+										<th class="numCell, bold">Start Date</th>
+										<th class="numCell, bold">Review Date</th>
+										<th class="textCell, bold">Review Status</th>
+										<th class="textCell, bold">Union Status</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+								<tr>
+										<th class="textCell">Active</th>
+										<th class="numCell">3514</th>
+										<th class="textCell">John Doe</th>
+										<th class="numCell">001</th>
+										<th class="textCell">YES</th>
+										<th class="textCell">Will Smith</th>
+										<th class="numCell">Feb. 01 2017</th>
+										<th class="numCell">Feb. 12</th>
+										<th class="textCell">Completed</th>
+										<th class="textCell">No</th>
+								</tr>
+						</thead>
+		</table>
+    </article>
+    
+    </main>
+    <footer>     
+      <ul class="copyright">
+          <li><cite>&copy; 2015-<?php echo date('Y').' '.$author; ?></cite></li> 
+      </ul>
+    <!-- social media icons a img -->
+    </footer>
+
+<!--scripts-->
+    <!--    jquery-->
+    <!--    prefix-free-->
+</body>
+</html>
